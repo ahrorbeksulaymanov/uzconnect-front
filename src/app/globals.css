@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #f8fafc;
+  --secondary-foreground: #0f172a;
+  --accent: #8b5cf6;
+  --accent-foreground: #ffffff;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #2563eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #1e293b;
+    --secondary-foreground: #f8fafc;
+    --accent: #a855f7;
+    --accent-foreground: #ffffff;
+    --muted: #334155;
+    --muted-foreground: #94a3b8;
+    --border: #334155;
+    --input: #1e293b;
+    --ring: #3b82f6;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  color: #111827 !important;
+}
+
+.ProseMirror p,
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6,
+.ProseMirror li,
+.ProseMirror ul,
+.ProseMirror ol {
+  color: #111827 !important;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Custom Select Styles */
+select {
+  background-color: white;
+  color: #111827;
+}
+
+select option {
+  background-color: white;
+  color: #111827;
+  padding: 8px 12px;
+}
+
+select option:hover {
+  background-color: #f3f4f6;
+}
+
+select option:checked {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* Headless UI Listbox Styles */
+.listbox-button {
+  @apply relative w-full px-4 py-3 text-left bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors cursor-pointer;
+}
+
+.listbox-options {
+  @apply absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-auto;
+}
+
+.listbox-option {
+  @apply relative cursor-pointer select-none py-3 px-4;
+}
+
+.listbox-option-active {
+  @apply bg-blue-50 text-blue-900;
+}
+
+.listbox-option-selected {
+  @apply font-medium;
+}
+
+.listbox-option-normal {
+  @apply font-normal;
+}
+
+/* Enhanced Shadcn Component Styles */
+.shadcn-enhanced {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Custom focus ring for all components */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Enhanced button hover effects */
+.btn-enhanced {
+  @apply transform transition-all duration-200 hover:scale-105 active:scale-95;
+}
+
+/* Enhanced input focus states */
+.input-enhanced {
+  @apply focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20;
+}
+
+/* Enhanced select dropdown */
+.select-enhanced {
+  @apply hover:border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20;
+}
+
+/* Smooth animations for all interactive elements */
+.interactive {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Custom shadow system */
+.shadow-custom {
+  @apply shadow-sm hover:shadow-md transition-shadow duration-200;
+}
+
+/* Enhanced border radius */
+.radius-enhanced {
+  @apply rounded-lg;
+}
+
+/* Custom color palette */
+.text-primary-custom {
+  @apply text-blue-600;
+}
+
+.text-secondary-custom {
+  @apply text-gray-600;
+}
+
+.text-success-custom {
+  @apply text-green-600;
+}
+
+.text-warning-custom {
+  @apply text-yellow-600;
+}
+
+.text-error-custom {
+  @apply text-red-600;
+}
+
+.bg-primary-custom {
+  @apply bg-blue-600;
+}
+
+.bg-secondary-custom {
+  @apply bg-gray-100;
+}
+
+.bg-success-custom {
+  @apply bg-green-100;
+}
+
+.bg-warning-custom {
+  @apply bg-yellow-100;
+}
+
+.bg-error-custom {
+  @apply bg-red-100;
+}
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
